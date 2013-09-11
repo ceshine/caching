@@ -20,7 +20,9 @@ def cached(cache=memory_cache, timeout=3600):
             keys = [func.__name__, str(args), str(kwargs.values())]
             cache_key = ';'.join(keys)
             cached = cache.get(cache_key)
-            if cached: return cached
+            if cached: 
+		logging.debug("Cache hit for %s" % cache_key)
+		return cached
             result = func(*args, **kwargs)
             cache.set(cache_key, result, timeout=timeout)
             return result
