@@ -1,10 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import pkg_resources
 import werkzeug.contrib.cache
 import logging
 
-__version__ = '0.0.1'
+__version__ = pkg_resources.require("datetimes")[0].version
 
 memory_cache = werkzeug.contrib.cache.SimpleCache()
 

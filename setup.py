@@ -4,8 +4,6 @@
 import os
 import sys
 
-import caching
-
 try:
     from setuptools import setup
 except ImportError:
@@ -25,7 +23,7 @@ requires = [
 
 setup(
     name='caching',
-    version=caching.__version__,
+    version='0.0.1',
     description='Extended werkzeug.contrib.cache as decorator',
     long_description=open('README.md').read(),
     author='Soshio',
